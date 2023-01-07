@@ -1,0 +1,20 @@
+plugins {
+	id 'groovy'
+	id 'com.netflix.nebula.jakartaee-migration' version '0.1.7' apply false
+}
+
+repositories {
+	mavenCentral()
+}
+
+allprojects {
+	apply plugin: 'com.netflix.nebula.jakartaee-migration'
+
+	jakartaeeMigration {
+		migrate()
+	}
+
+	dependencies {
+		implementation 'org.codehaus.groovy:groovy-all:3.0.14'
+	}
+}
